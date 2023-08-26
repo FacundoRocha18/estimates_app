@@ -16,30 +16,38 @@ interface Report {
 	images: string;
 }
 
-const URL = 'http://localhost:3000/reports/list';
-
 const App = () => {
 	const [reports, setReports] = useState<Report[]>([]);
 
 	useEffect(() => {
-		const headers = new Headers();
-		headers.append('Cookie', 'session=eyJpZCI6ImM4Njk3MTUxLTc3ZDYtNDBkNC1hYjRhLTk5NmQ4ZmQ3NzMyOSJ9; session.sig=cZcMrB4yRFkYgkn8ZINWK3Sacwo')
+		const getReports = async () => {
+			const requestSettings: RequestInit = {
+				method: 'GET',
+				mode: 'no-cors',
+				redirect: 'follow',
+				headers: {
+					'Content-Type': 'application/json; charset=utf-8'
+				}
+			}
 
-		fetch(URL, { headers: headers, mode: 'no-cors' })
-			.then((res) => res.json())
-			.then((data: Report[]) => {
-				setReports(data)
-			})
+			fetch("http://localhost:3000/reports/list", requestSettings)
+				.then(response => response.text())
+				.then(data => console.log(data))
+				.catch(err => console.error(err))
+		}
+
+		getReports()
 	}, [])
 
 	return (
 		<>
+			<h1>Reports</h1>
 			{
 				reports.map(({ id, maker, images }: Report) => (
 					<section>
-						<p>{ id }</p>
-						<p>{ maker }</p>
-						<img src={`data:image/jpg;base64,${ images }`} />
+						<p>{id}</p>
+						<p>{maker}</p>
+						<img src={`data:image/jpg;base64,${images}`} />
 					</section>
 				))
 			}
