@@ -1,14 +1,17 @@
 import { ReportCard } from '../components/ReportCard';
 import { Grid } from '../components/Grid';
 import { useReports } from '../hooks/useReports';
+import { Title } from '../components/Title';
+import { Signin } from '../components/Login';
 
 const App = () => {
 	const [reports,] = useReports()
 
 	return (
-		<main className='dark text-foreground bg-primary-50 min-h-screen'>
-			<div className='flex flex-col'>
-				<h1 className='text-center text-4xl font-bold my-6'>Car sales reports</h1>
+		<main className='dark text-foreground bg--50 min-h-screen'>
+			<div className='flex flex-col gap-y-4'>
+				<Title>Car sales reports</Title>
+				<Signin />
 				<Grid>
 					{
 						reports.map(({ id, maker, model, images }) => (
