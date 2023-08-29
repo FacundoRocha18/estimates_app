@@ -23,12 +23,6 @@ main {
 	width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-	margin-bottom: 16px;
-}
-
 .grid {
 	list-style: none;
 	display: grid;
