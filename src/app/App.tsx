@@ -3,10 +3,10 @@ import { Grid } from '../components/Grid';
 import { useReports } from '../hooks/useReports';
 
 const App = () => {
-	const [reports, isLoading] = useReports()
+	const [reports,] = useReports()
 
 	return (
-		<main className='dark text-foreground bg-background min-h-screen'>
+		<main className='dark text-foreground bg-primary-50 min-h-screen'>
 			<div className='flex flex-col'>
 				<h1 className='text-center text-4xl font-bold my-6'>Car sales reports</h1>
 				<Grid>
