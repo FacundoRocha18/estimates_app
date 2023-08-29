@@ -1,0 +1,1 @@
+export const LIST_ALL_REPORTS_URL = 'http://localhost:3000/reports/list'
