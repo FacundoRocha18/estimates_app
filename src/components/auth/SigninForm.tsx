@@ -32,7 +32,6 @@ export const SigninForm = () => {
 				placeholder="jhondoe@email.com"
 				type="email"
 				variant="underlined"
-				labelPlacement="outside"
 				description="We'll never share your email with anyone else."
 				onChange={({ target }) => setEmail(target.value)}
 				startContent={
@@ -47,13 +46,12 @@ export const SigninForm = () => {
 				placeholder="Password"
 				type="password"
 				variant="underlined"
-				labelPlacement="outside"
 				onChange={({ target }) => setPassword(target.value)}
 				startContent={
 					<IconLock />
 				}
 			/>
-			<Button className='w-full bg-lime-500 font-medium rounded' onClick={handleSubmit}>Login</Button>
+			<Button className='w-full bg-lime-500 font-medium rounded' onClick={handleSubmit}>Signin</Button>
 		</form>
 	)
 }

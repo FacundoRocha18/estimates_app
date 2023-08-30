@@ -5,11 +5,13 @@ import { Providers } from './components/app/providers.tsx'
 import { Root } from './routes/root.tsx'
 import { Signin } from './routes/Signin.tsx'
 import './styles/index.css'
+import ErrorPage from './routes/error-page.tsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Root />
+		element: <Root />,
+		errorElement: <ErrorPage />
 	},
 	{
 		path: '/auth/signin',
