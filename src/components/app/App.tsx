@@ -1,8 +1,8 @@
-import { ReportCard } from '../components/ReportCard';
-import { Grid } from '../components/Grid';
-import { useReports } from '../hooks/useReports';
-import { Title } from '../components/Title';
-import { Signin } from '../components/Signin';
+import { ReportCard } from '../layout/ReportCard';
+import { Grid } from '../layout/Grid';
+import { useReports } from '../../hooks/useReports';
+import { Title } from '../common/Title';
+import { SigninForm } from '../auth/SigninForm';
 
 const App = () => {
 	const [reports,] = useReports()
@@ -11,11 +11,11 @@ const App = () => {
 		<main className='dark text-foreground bg--50 min-h-screen'>
 			<div className='flex flex-col gap-y-4'>
 				<Title>Car sales reports</Title>
-				<Signin />
+				<SigninForm />
 				<Grid>
 					{
 						reports.map(({ id, maker, model, images }) => (
-							<ReportCard id={id} maker={maker} model={model} images={images} />
+							<ReportCard key={id} id={id} maker={maker} model={model} images={images} />
 						))
 					}
 				</Grid>
