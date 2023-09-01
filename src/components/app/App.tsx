@@ -1,15 +1,15 @@
 import { ReportCard } from '../layout/ReportCard';
 import { Grid } from '../layout/Grid';
 import { useReports } from '../../hooks/useReports';
-import { Title } from '../common/Title';
+import { SearchForm } from '../common/search-form';
 
 const App = () => {
 	const [reports,] = useReports()
 
 	return (
 		<main className='dark text-foreground bg--50 min-h-screen'>
-			<div className='flex flex-col gap-y-4'>
-				<Title>Car sales reports</Title>
+			<div className='flex flex-col gap-y-4 p-4'>
+				<SearchForm />
 				<Grid>
 					{
 						reports.map(({ id, maker, model, images }) => (

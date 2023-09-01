@@ -23,10 +23,13 @@ export const SigninForm = () => {
 	}
 
 	return (
-		<form className="w-96 bg-foreground-300 rounded p-4 flex flex-col gap-4">
+		<form className="text-slate-200 w-96 bg-foreground-800 rounded p-4 flex flex-col gap-4">
 			<Input
 				isRequired
 				isClearable
+				classNames={{
+					label: "text-slate-200",
+				}}
 				size="md"
 				label="Your email"
 				placeholder="jhondoe@email.com"
@@ -41,6 +44,9 @@ export const SigninForm = () => {
 			<Input
 				isRequired
 				isClearable
+				classNames={{
+					label: "text-slate-200",
+				}}
 				size="md"
 				label="Your password"
 				placeholder="Password"

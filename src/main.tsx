@@ -2,21 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Providers } from './components/app/providers.tsx'
-import { Root } from './routes/root.tsx'
-import { Signin } from './routes/Signin.tsx'
+import { Root } from './routes/root.route.tsx'
+import { Auth } from './routes/auth.route.tsx'
 import './styles/index.css'
-import ErrorPage from './routes/error-page.tsx'
+import ErrorPage from './routes/error-page.route.tsx'
+import App from './components/app/App.tsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Root />,
-		errorElement: <ErrorPage />
+		errorElement: <ErrorPage />,
+		children: [
+			{
+				path: '/',
+				element: <App />
+			},
+			{
+				path: 'auth/signin',
+				element: <Auth />
+			}
+		]
 	},
-	{
-		path: '/auth/signin',
-		element: <Signin />
-	}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
