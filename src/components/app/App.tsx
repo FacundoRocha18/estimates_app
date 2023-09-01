@@ -4,16 +4,16 @@ import { useReports } from '../../hooks/useReports';
 import { SearchForm } from '../common/search-form';
 
 const App = () => {
-	const [reports,] = useReports()
+	const [reports, isLoading] = useReports()
 
 	return (
-		<main className='dark text-foreground bg--50 min-h-screen'>
-			<div className='flex flex-col gap-y-4 p-4'>
+		<main className='dark text-foreground min-h-screen'>
+			<div className='flex flex-col gap-y-4 p-4 w-screen'>
 				<SearchForm />
 				<Grid>
 					{
-						reports.map(({ id, maker, model, images }) => (
-							<ReportCard key={id} id={id} maker={maker} model={model} images={images} />
+						reports.map(report => (
+							<ReportCard key={report.id} report={report} isLoaded={isLoading} />
 						))
 					}
 				</Grid>

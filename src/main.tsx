@@ -7,6 +7,8 @@ import { Auth } from './routes/auth.route.tsx'
 import './styles/index.css'
 import ErrorPage from './routes/error-page.route.tsx'
 import App from './components/app/App.tsx'
+import { SignupForm } from './components/auth/signup-form.tsx'
+import { SigninForm } from './components/auth/SigninForm.tsx'
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +22,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'auth/signin',
-				element: <Auth />
+				element: <Auth><SigninForm /></Auth>
+			},
+			{
+				path: 'auth/signup',
+				element: <Auth><SignupForm /></Auth>
 			}
 		]
 	},

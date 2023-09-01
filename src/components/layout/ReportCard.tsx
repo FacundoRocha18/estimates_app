@@ -2,19 +2,22 @@ import { Button, Card, CardHeader, CardBody, CardFooter, Image } from '@nextui-o
 import { IReport } from '../../common/interfaces/types'
 import { Subtitle } from '../common/Subtitle'
 
-export const ReportCard = ({ maker, model, images }: Partial<IReport>) => {
-	const subtitle = maker + ' ' + model;
-	
+interface Props {
+	report: IReport;
+	isLoaded: boolean;
+}
+
+export const ReportCard = ({ report, isLoaded }: Props) => {
+	const carName = report.maker + ' ' + report.model;
+
+	console.log(isLoaded)
+
 	return (
-		<Card className="rounded">
-			<CardHeader className='flex-col items-start gap-1'>
-				<Subtitle>{subtitle}</Subtitle>
-			</CardHeader>
-			<CardBody className="overflow-visible py-1 px-3">
-				<Image alt={images[0].filename} className="object-cover rounded" src={`data:image/jpeg;base64,${images[0].content}`} isBlurred isZoomed radius='none' />
-			</CardBody>
-			<CardFooter>
-				<Button className='w-full bg-lime-500 font-medium rounded'>See report info</Button>
+		<Card className="rounded" isFooterBlurred>
+			<Image alt={report.images[0].filename} className="object-cover rounded" src={`data:image/jpeg;base64,${report.images[0].content}`} isBlurred isZoomed removeWrapper radius='none' />
+			<CardFooter className="absolute bottom-0 z-20 flex flex-col gap-4" >
+				<Subtitle>{carName}</Subtitle>
+				<Button className="w-full bg-lime-500 font-medium rounded">See car info</Button>
 			</CardFooter>
 		</Card>
 	)

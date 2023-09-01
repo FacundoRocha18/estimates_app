@@ -1,11 +1,12 @@
-import { useState } from "react"
+import { useState } from "react";
 import { Button, Input } from "@nextui-org/react";
-import { IconMail, IconLock } from '@tabler/icons-react'
-import { SIGNIN_URL } from "../../common/constants";
+import { IconMail, IconLock, IconUserHexagon } from "@tabler/icons-react";
+import { SIGNUP_URL } from "../../common/constants";
 import { handleSubmit } from "../../helpers/auth.helper";
 
-export const SigninForm = () => {
+export const SignupForm = () => {
 	const [email, setEmail] = useState<string | null>(null);
+	const [name, setName] = useState<string | null>(null);
 	const [password, setPassword] = useState<string | null>(null);
 
 	return (
@@ -34,6 +35,22 @@ export const SigninForm = () => {
 					label: "text-slate-200",
 				}}
 				size="md"
+				label="Your name"
+				placeholder="Jhon Doe"
+				type="text"
+				variant="underlined"
+				onChange={({ target }) => setName(target.value)}
+				startContent={
+					<IconUserHexagon />
+				}
+			/>
+			<Input
+				isRequired
+				isClearable
+				classNames={{
+					label: "text-slate-200",
+				}}
+				size="md"
 				label="Your password"
 				placeholder="Password"
 				type="password"
@@ -43,7 +60,7 @@ export const SigninForm = () => {
 					<IconLock />
 				}
 			/>
-			<Button className='w-full bg-lime-500 font-medium rounded' onClick={() => handleSubmit({ URL: SIGNIN_URL, data: { email, password } })}>Signin</Button>
+			<Button className='w-full bg-lime-500 font-medium rounded' onClick={() => handleSubmit({ URL: SIGNUP_URL, data: { email, name, password } })}>Signin</Button>
 		</form>
 	)
 }

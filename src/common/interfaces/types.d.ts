@@ -19,3 +19,11 @@ export interface Image {
 	filename: string;
 	content: string;
 }
+
+export interface IUser {
+	id: UUID;
+	email: string | null;
+	name: string | null;
+	password: string | null;
+	admin: boolean;
+}

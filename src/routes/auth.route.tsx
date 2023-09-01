@@ -1,9 +1,11 @@
-import { SigninForm } from "../components/auth/SigninForm"
+import { ReactNode } from "react"
 
-export const Auth = () => {
+export const Auth = ({ children }: { children: ReactNode } ) => {
 	return (
 		<section className="flex flex-col justify-center items-center min-h-screen">
-			<SigninForm />
+			{
+				children
+			}
 		</section>
 	)
 }

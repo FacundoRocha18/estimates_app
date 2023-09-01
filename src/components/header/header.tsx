@@ -36,7 +36,7 @@ export const Header = () => {
 					<Link href="/auth/signin">Login</Link>
 				</NavbarItem>
 				<NavbarItem>
-					<Button as={Link} color="primary" href="" variant="flat">
+					<Button as={Link} color="primary" href="/auth/signup" variant="flat">
 						Sign Up
 					</Button>
 				</NavbarItem>
