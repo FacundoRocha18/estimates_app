@@ -1,6 +1,6 @@
-import { Button, Card, CardHeader, CardBody, CardFooter, Image } from '@nextui-org/react'
+import { Button, Card, CardFooter, Image } from '@nextui-org/react'
 import { IReport } from '../../common/interfaces/types'
-import { Subtitle } from '../common/Subtitle'
+import { Subtitle } from '../common/subtitle'
 
 interface Props {
 	report: IReport;
@@ -9,8 +9,6 @@ interface Props {
 
 export const ReportCard = ({ report, isLoaded }: Props) => {
 	const carName = report.maker + ' ' + report.model;
-
-	console.log(isLoaded)
 
 	return (
 		<Card className="rounded" isFooterBlurred>

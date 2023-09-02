@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button, Input } from "@nextui-org/react";
 import { IconMail, IconLock } from '@tabler/icons-react'
 import { SIGNIN_URL } from "../../common/constants";
-import { handleSubmit } from "../../helpers/auth.helper";
+import { handleSubmit } from "../../helpers/auth";
 
 export const SigninForm = () => {
 	const [email, setEmail] = useState<string | null>(null);

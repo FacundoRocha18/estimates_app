@@ -27,3 +27,8 @@ export interface IUser {
 	password: string | null;
 	admin: boolean;
 }
+
+export interface PaginationOptions {
+	max: number;
+	offset: number;
+}

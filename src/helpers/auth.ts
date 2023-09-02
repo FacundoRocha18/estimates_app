@@ -1,6 +1,5 @@
 import { IUser } from "../common/interfaces/types"
 
-
 export const handleSubmit = async ({ URL, data }: { URL: string, data: Partial<IUser> }) => {
 	const params: RequestInit = {
 		body: JSON.stringify(data),

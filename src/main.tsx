@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Providers } from './components/app/providers.tsx'
-import { Root } from './routes/root.route.tsx'
-import { Auth } from './routes/auth.route.tsx'
+import { Root } from './routes/root.tsx'
+import { Auth } from './routes/auth.tsx'
 import './styles/index.css'
-import ErrorPage from './routes/error-page.route.tsx'
-import App from './components/app/App.tsx'
+import ErrorPage from './routes/error-page.tsx'
+import App from './components/app/app.tsx'
 import { SignupForm } from './components/auth/signup-form.tsx'
-import { SigninForm } from './components/auth/SigninForm.tsx'
+import { SigninForm } from './components/auth/signin-form.tsx'
 
 const router = createBrowserRouter([
 	{
