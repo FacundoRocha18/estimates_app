@@ -32,3 +32,8 @@ export interface PaginationOptions {
 	max: number;
 	offset: number;
 }
+
+export interface ReportsContext {
+	reports: IReport[];
+	isLoading: boolean;
+}
