@@ -19,9 +19,9 @@ export const SearchForm = () => {
 		<form className='w-full p-6'>
 			<Input
 				label="Search a car"
-				isClearable
 				radius='sm'
-				size='md'
+				size='sm'
+				isClearable
 				onChange={({ target }) => setSearch(target.value)}
 				endContent={
 					<Button className='px-0 w-10'>
