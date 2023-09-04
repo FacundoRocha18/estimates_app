@@ -1,5 +1,5 @@
 import { ReportCard } from '../layout/report-card';
-import { Grid } from '../layout/grid';
+import { Grid } from '../layout/Grid';
 import { useReports } from '../../hooks/useReports';
 import { SearchForm } from '../common/search-form';
 import { Pagination } from '@nextui-org/react';

@@ -1,6 +1,6 @@
 import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react"
-import { Title } from "../common/title"
-import { Logo } from "../common/logo"
+import { Title } from "../common/Title"
+import { Logo } from "../common/Logo"
 import { Link } from "react-router-dom"
 
 export const Header = () => {
