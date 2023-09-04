@@ -1,5 +1,5 @@
 import { ReportCard } from '../layout/report-card';
-import { Grid } from '../layout/Grid';
+import { Grid } from '../layout/grid';
 import { useReports } from '../../hooks/useReports';
 import { SearchForm } from '../common/search-form';
 import { Pagination } from '@nextui-org/react';
@@ -20,7 +20,7 @@ const App = () => {
 						))
 					}
 				</Grid>
-				<Pagination showControls total={10} initialPage={page} onChange={(page: number) => changePage(page)}/>
+				<Pagination showControls isCompact showShadow radius='sm' total={10} initialPage={page} onChange={(page: number) => changePage(page)}/>
 			</div>
 		</main>
 	)

@@ -7,7 +7,7 @@ export const SearchForm = () => {
 
 	useEffect(() => {
 		if (search !== '') {
-			fetch(`http://localhost:3000/reports/find?name=${search}`)
+			fetch(`http://localhost:3000/reports/listBy?max=10&offset=0&name=${search}`)
 			.then(response => response.json())
 			.then(data => console.log(data))
 			.catch(err => console.log(err))
