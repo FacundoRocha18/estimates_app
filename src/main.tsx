@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Providers } from './providers/providers.tsx'
 import { Root } from './routes/root.tsx'
 import { Auth } from './routes/auth.tsx'
-import './styles/index.css'
-import ErrorPage from './routes/error-page.tsx'
-import App from './components/app/app.tsx'
+import { ErrorPage } from './routes/error-page.tsx'
+import { App } from './components/app/App.tsx'
 import { SignupForm } from './components/auth/signup-form.tsx'
 import { SigninForm } from './components/auth/signin-form.tsx'
+import './styles/index.css'
 
 const router = createBrowserRouter([
 	{

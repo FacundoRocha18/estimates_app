@@ -11,5 +11,5 @@ export const createContextCustom = <A extends object | null>() => {
 		return c
 	}
 
-	return [useContextCustom, context.Provider]
+	return [useContextCustom, context.Provider] as const
 }

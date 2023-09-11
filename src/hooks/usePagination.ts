@@ -1,34 +1,40 @@
 import { useState, useEffect } from "react"
 
 export const usePagination = () => {
-	const max = 12
 	const [offset, setOffset] = useState<number>(0)
-	const [page, setPage] = useState(1)
-	const [previousPage, setPreviousPage] = useState(page)
+	const [previousOffset, setPreviousOffset] = useState<number>(0)
+	const [currentPage, setCurrentPage] = useState(1)
+	const [previousPage, setPreviousPage] = useState(currentPage)
+	const reportsPerPage = 12
+	const step = 12
 
 	const increaseOffset = () => {
-		setOffset((offset: number) => offset + max)
+		setPreviousOffset(offset)
+		setOffset((offset: number) => offset + step)
 	}
 
 	const decreaseOffset = () => {
 		if (offset <= 0) return 
-		setOffset((offset: number) => offset - max)
+		setOffset(previousOffset)
 	}
 
 	const changePage = (page: number) => {
-		setPage(page)
+		setPreviousPage(currentPage)
+		setCurrentPage(page)
 	}
+
+	console.log(reportsPerPage, offset, currentPage)
 
 	useEffect(() => {
 
-		if (page > 1) {
+		if (currentPage > 1) {
 			increaseOffset()
 		}
 
-		if (page <= previousPage) {
+		if (currentPage <= previousPage) {
 			decreaseOffset()
 		}
-	}, [page, previousPage])
+	}, [currentPage, previousPage])
 
-	return { max, offset, page, changePage }
+	return { max: reportsPerPage, offset, page: currentPage, changePage }
 }
