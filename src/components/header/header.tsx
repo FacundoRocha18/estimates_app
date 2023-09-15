@@ -1,21 +1,25 @@
 import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react"
-import { Title } from "../common/Title"
-import { Logo } from "../common/Logo"
+import { Title } from "../common/title"
+import { Logo } from "../common/logo"
 import { Link } from "react-router-dom"
+import { SearchForm } from '../common/search-form'
+import { IconShoppingCart } from '@tabler/icons-react'
 
 export const Header = () => {
 	return (
-		<Navbar>
-			<NavbarBrand className="flex items-center">
+		<Navbar className='bg-[#FBF159] p-2 header' maxWidth='xl' isBlurred={false} shouldHideOnScroll>
+			<NavbarBrand className="flex items-center header-logo">
 				<Logo />
-				<Title>Car sales</Title>
+				<Link to={"/"} color="foreground">
+					<Title>Car sales</Title>
+				</Link>
 			</NavbarBrand>
-			<NavbarContent className="hidden sm:flex gap-4">
-				<NavbarItem isActive>
-					<Link to={"/"} color="foreground">
-						Home
-					</Link>
+			<NavbarContent justify='center' className="hidden sm:flex gap-4 header-search">
+				<NavbarItem>
+					<SearchForm />
 				</NavbarItem>
+			</NavbarContent>
+			<NavbarContent justify='center' className="hidden sm:flex gap-4 header-menu">
 				<NavbarItem isActive>
 					<Link to={'#'} color="foreground">
 						Users
@@ -27,15 +31,18 @@ export const Header = () => {
 					</Link>
 				</NavbarItem>
 			</NavbarContent>
-			<NavbarContent justify="end">
-				<NavbarItem className="hidden lg:flex">
-					<Link to={'/auth/signin'}>Login</Link>
-				</NavbarItem>
+			<NavbarContent justify='end'>
 				<NavbarItem>
-					<Button as={Link} color="primary" to={"/auth/signup"} variant="flat">
-						Sign Up
-					</Button>
+					<Link to={"/auth/signup"} />
+					Crea tu cuenta
 				</NavbarItem>
+				<NavbarItem className="hidden lg:flex">
+					<Link to={'/auth/signin'}>Ingresa</Link>
+				</NavbarItem>
+				<NavbarItem className="hidden lg:flex">
+					<Link to={'/auth/signin'}>Mis compras</Link>
+				</NavbarItem>
+				<Button as={Link} to={'#'}><IconShoppingCart /></Button>
 			</NavbarContent>
 		</Navbar>
 	)

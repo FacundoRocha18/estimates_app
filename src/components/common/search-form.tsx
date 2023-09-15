@@ -16,11 +16,12 @@ export const SearchForm = () => {
 	
 
 	return (
-		<form className='w-full p-6'>
+		<form className='w-full max-w-2xl'>
 			<Input
-				label="Search a car"
+				label="Buscar productos, marcas y más..."
 				radius='sm'
 				size='sm'
+				className='w-96'
 				isClearable
 				onChange={({ target }) => setSearch(target.value)}
 				endContent={

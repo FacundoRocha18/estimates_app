@@ -9,7 +9,7 @@ export const [useReportsContext, ContextProvider] = createContextCustom<ReportsC
 export const ReportsProvider = ({ children }: { children: React.ReactNode }) => {
 	const { max, offset } = usePagination()
 	const [reports, isLoading] = useReports({ max, offset })
-
+	
 	const providerValue: ReportsContext = {
 		reports,
 		isLoading

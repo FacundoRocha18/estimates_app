@@ -6,7 +6,7 @@ export const usePagination = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [previousPage, setPreviousPage] = useState(currentPage)
 	const reportsPerPage = 12
-	const step = 12
+	const step = reportsPerPage
 
 	const increaseOffset = () => {
 		setPreviousOffset(offset)
@@ -14,8 +14,11 @@ export const usePagination = () => {
 	}
 
 	const decreaseOffset = () => {
-		if (offset <= 0) return 
-		setOffset(previousOffset)
+		if (offset === 0) return
+
+		if (previousOffset > offset) return
+
+		setOffset(offset - step)
 	}
 
 	const changePage = (page: number) => {
@@ -23,18 +26,16 @@ export const usePagination = () => {
 		setCurrentPage(page)
 	}
 
-	console.log(reportsPerPage, offset, currentPage)
-
 	useEffect(() => {
 
-		if (currentPage > 1) {
+		if (currentPage > previousPage) {
 			increaseOffset()
 		}
 
 		if (currentPage <= previousPage) {
 			decreaseOffset()
 		}
-	}, [currentPage, previousPage])
+	}, [currentPage])
 
 	return { max: reportsPerPage, offset, page: currentPage, changePage }
 }
