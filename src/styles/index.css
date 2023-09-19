@@ -31,35 +31,45 @@ main {
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.header {
+.wrapper {
+	display: flex;
+	flex-direction: column !important;
+	flex-wrap: wrap !important;
+	height: fit-content;
+	gap: 16px;
+}
+
+.header-line {
+	align-items: center;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	gap: 12px;
+	grid-template-columns: 200px minmax(340px, 580px) minmax(350px, 390px);
+	gap: 24px;
+	justify-content: start;
+	width: 100%;
 }
 
 .header-logo {
 	grid-column: 1;
-	grid-row: 1;
 }
 
 .header-search {
 	grid-column: 2;
-	grid-row: 1;
 }
 
 .header-news {
 	grid-column: 3;
-	grid-row: 1;
+}
+
+.header-menu {
+	grid-column: 1;
 }
 
 .header-menu {
 	grid-column: 2;
-	grid-row: 2;
 }
 
 .header-auth-menu {
 	grid-column: 3;
-	grid-row: 2;
 }
+
 
