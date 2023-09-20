@@ -41,7 +41,7 @@ main {
 	align-items: center;
 	display: grid;
 	grid-template-columns: 200px minmax(340px, 580px) minmax(350px, 390px);
-	gap: 24px;
+	gap: 32px;
 	justify-content: start;
 	width: 100%;
 }

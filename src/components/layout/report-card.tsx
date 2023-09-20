@@ -13,7 +13,7 @@ interface Props {
 export const ReportCard = ({ report }: Props) => {
 	const carName = report.maker + ' ' + report.model;
 	const monthlyFees = (report.price / 12).toFixed(2);
-	const isInDiscount = true;
+	const hasDiscount = false;
 
 	return (
 		<Badge
@@ -24,12 +24,12 @@ export const ReportCard = ({ report }: Props) => {
 			variant='solid'
 			placement='top-right'
 			disableOutline
-			isInvisible={!isInDiscount}
+			isInvisible={!hasDiscount}
 		>
 			<Card className="rounded-[4px] shadow-sm hover:shadow-xl">
 				<Link to={`/reports/${report.id}`}>
 					<CardBody className='p-1 flex items-center justify-center h-[224px] overflow-hidden'>
-						<Image alt={report.images[0].filename} removeWrapper className="rounded-none max-h-full" src={`data:image/jpeg;base64,${report.images[0].content}`} radius='none' />
+						<Image alt={report.images[0].filename} isZoomed className="rounded-none max-h-full" src={`data:image/jpeg;base64,${report.images[0].content}`} radius='none' />
 					</CardBody>
 					<Divider />
 					<CardFooter className="flex flex-col items-start gap-4 rounded-none" >
@@ -38,7 +38,7 @@ export const ReportCard = ({ report }: Props) => {
 							report.kilometers
 								?
 								<section>
-									<PriceTag>{"$ " + report.price.toString()}</PriceTag>
+									<PriceTag>{"U$S " + report.price.toString()}</PriceTag>
 									<p className='font-normal text-sm'>Año {report.year} - {report.kilometers} Km</p>
 									<p className='font-light'>Montevideo - Montevideo</p>
 								</section>
