@@ -1,20 +1,23 @@
 import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react"
+import { IconBell, IconDiscount2, IconMapPin, IconShoppingCart } from '@tabler/icons-react'
+import { Link } from "react-router-dom"
 import { Title } from "../common/Title"
 import { Logo } from "../common/logo"
-import { Link } from "react-router-dom"
 import { SearchForm } from '../common/search-form'
-import { IconBell, IconDiscount2, IconMapPin, IconShoppingCart } from '@tabler/icons-react'
+import { AuthMenu } from './auth-menu'
+import { MainMenu } from './main-menu'
+import { HeaderLine } from './header-line'
 
 export const Header = () => {
 	return (
 		<Navbar className='bg-[#FBF159] p-2 h-auto' classNames={{
 			wrapper: 'wrapper'
 		}} maxWidth='xl' isBlurred={false} shouldHideOnScroll>
-			<div className='header-line'>
+			<HeaderLine>
 				<NavbarBrand className="flex items-center header-logo">
 					<Logo />
 					<Link to={"/"} color="foreground">
-						<Title>Car sales</Title>
+						<Title>ACME</Title>
 					</Link>
 				</NavbarBrand>
 				<NavbarContent justify='start' className="hidden sm:flex gap-4 header-search">
@@ -23,54 +26,20 @@ export const Header = () => {
 					</NavbarItem>
 				</NavbarContent>
 				<NavbarContent justify='center' className="hidden sm:flex gap-4 header-news">
-					<h3>Nuevas ofertas por ciberlunes</h3>
+					<Link to={'#'}>Nuevas ofertas por ciberlunes</Link>
 					<IconDiscount2 />
 				</NavbarContent>
-			</div>
-			<div className='header-line'>
+			</HeaderLine>
+			<HeaderLine>
 				<NavbarContent justify='start' className="hidden sm:flex gap-4 header-location">
 					<IconMapPin />
-					<p>Ingresa tu ubicación</p>
+					<Link to={'#'}>Ingresa tu ubicación</Link>
 				</NavbarContent>
 				<NavbarContent justify='start' className="hidden sm:flex gap-4 header-menu">
-					<NavbarItem>
-						<Link to={'#'} color="foreground">
-							Categorías
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link to={'#'} color="foreground">
-							Ofertas
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link to={'#'} color="foreground">
-							Historial
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link to={'#'} color="foreground">
-							Moda
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link to={'#'} color="foreground">
-							Vender
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link to={'#'} color="foreground">
-							Ayuda
-						</Link>
-					</NavbarItem>
+					<MainMenu />
 				</NavbarContent>
 				<NavbarContent justify='center'>
-					<NavbarItem>
-						<Link to={"/auth/signup"}>Crea tu cuenta</Link>
-					</NavbarItem>
-					<NavbarItem className="hidden lg:flex">
-						<Link to={'/auth/signin'}>Ingresa</Link>
-					</NavbarItem>
+					<AuthMenu />
 					<NavbarItem className="hidden lg:flex">
 						<Link to={'/auth/signin'}>Mis compras</Link>
 					</NavbarItem>
@@ -85,7 +54,7 @@ export const Header = () => {
 						</Button>
 					</NavbarItem>
 				</NavbarContent>
-			</div>
+			</HeaderLine>
 		</Navbar>
 	)
 }
