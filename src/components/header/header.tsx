@@ -17,7 +17,7 @@ export const Header = () => {
 				<NavbarBrand className="flex items-center header-logo">
 					<Logo />
 					<Link to={"/"} color="foreground">
-						<Title>ACME</Title>
+						<Title>Car sales</Title>
 					</Link>
 				</NavbarBrand>
 				<NavbarContent justify='start' className="hidden sm:flex gap-4 header-search">
@@ -27,12 +27,12 @@ export const Header = () => {
 				</NavbarContent>
 				<NavbarContent justify='center' className="hidden sm:flex gap-4 header-news">
 					<Link to={'#'}>Nuevas ofertas por ciberlunes</Link>
-					<IconDiscount2 />
+					<IconDiscount2 strokeWidth="1.50"/>
 				</NavbarContent>
 			</HeaderLine>
 			<HeaderLine>
-				<NavbarContent justify='start' className="hidden sm:flex gap-4 header-location">
-					<IconMapPin />
+				<NavbarContent justify='start' className="hidden sm:flex gap-2 header-location">
+					<IconMapPin strokeWidth="1.50"/>
 					<Link to={'#'}>Ingresa tu ubicación</Link>
 				</NavbarContent>
 				<NavbarContent justify='start' className="hidden sm:flex gap-4 header-menu">
@@ -45,12 +45,12 @@ export const Header = () => {
 					</NavbarItem>
 					<NavbarItem className="hidden lg:flex">
 						<Button as={Link} to={'#'} isIconOnly variant='light' radius='sm' size='sm'>
-							<IconBell />
+							<IconBell strokeWidth="1.50"/>
 						</Button>
 					</NavbarItem>
 					<NavbarItem className="hidden lg:flex">
 						<Button as={Link} to={'#'} isIconOnly variant='light' radius='sm' size='sm'>
-							<IconShoppingCart />
+							<IconShoppingCart strokeWidth="1.50"/>
 						</Button>
 					</NavbarItem>
 				</NavbarContent>

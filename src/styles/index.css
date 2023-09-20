@@ -18,17 +18,15 @@
 }
 
 main {
-	display: flex;
-	justify-content: center;
-	width: 100%;
+	font-family: 'Poppins', sans-serif;
 }
 
 .grid {
 	list-style: none;
 	display: grid;
-	gap: 12px;
+	gap: 20px;
 	width: 100%;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .wrapper {
@@ -71,5 +69,3 @@ main {
 .header-auth-menu {
 	grid-column: 3;
 }
-
-
